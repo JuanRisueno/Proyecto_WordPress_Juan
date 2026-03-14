@@ -1,0 +1,29 @@
+services:
+  db:
+    image: mariadb:10.11
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: oretania
+      MYSQL_DATABASE: wordpress_db
+      MYSQL_USER: JuanAdmin
+      MYSQL_PASSWORD: Juan1234
+    volumes:
+      - db_data:/var/lib/mysql
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "8080:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: JuanAdmin
+      WORDPRESS_DB_PASSWORD: Juan1234
+      WORDPRESS_DB_NAME: wordpress_db
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+
+volumes:
+  db_data:
