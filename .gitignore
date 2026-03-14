@@ -1,0 +1,22 @@
+# Ignorar el núcleo de WordPress (ya lo trae Docker)
+wp-admin/
+wp-includes/
+*.php
+!index.php
+!wp-config.php
+
+# Ignorar contenido estándar que no sea tuyo
+wp-content/plugins/
+wp-content/themes/twentytwenty*
+wp-content/languages/
+wp-content/upgrade/
+
+# Ignorar las imágenes (ocupan demasiado espacio en Git)
+wp-content/uploads/
+
+# PERMITIR tu trabajo (el Child Theme que vamos a crear)
+!wp-content/themes/blocksy-child/
+
+# Ignorar archivos del sistema y logs
+*.log
+.DS_Store
