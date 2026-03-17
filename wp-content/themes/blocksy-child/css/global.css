@@ -1,0 +1,34 @@
+/* FONDO */
+body { background-color: var(--bg-crema) !important; }
+
+/* FIX CRÍTICO: TÍTULOS INVISIBLES (LO QUE SE VE AZUL EN TU FOTO) */
+/* Atacamos específicamente al contenedor de cabecera de la entrada/página */
+header.entry-header, 
+.ct-page-title, 
+.entry-title, 
+.page-title,
+header.entry-header * {
+    color: var(--oxford) !important;
+    -webkit-text-fill-color: var(--oxford) !important;
+}
+
+/* TEXTO GENERAL */
+main#main p, main#main li {
+    color: var(--oxford) !important;
+}
+
+/* FOOTER */
+.ct-footer { background-color: var(--oxford) !important; }
+.ct-footer :is(p, span, a) { color: #ffffff !important; }
+
+/* CLASE DE RESCATE PARA TEXTO INVISIBLE */
+.fuerza-oxford, 
+.fuerza-oxford *,
+h1.fuerza-oxford, 
+h2.fuerza-oxford, 
+p.fuerza-oxford {
+    color: var(--oxford) !important;
+    -webkit-text-fill-color: var(--oxford) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}

@@ -1,0 +1,26 @@
+/*
+ Theme Name:   Blocksy Child
+ Description:  v18.0 - Infraestructura y Header
+ Author:       Juan A. Risueño
+*/
+
+/* 1. LIMITACIÓN ULTRAWIDE */
+.ct-container, .entry-content, .site-main {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+
+/* 2. LOGO Y DESCRIPCIÓN (Siempre Blancos) */
+.ct-header [data-id="logo"] :is(.ct-site-title, .ct-site-description, a) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+:root {
+    --bg-crema: #fdfbf7;
+    --oxford: #1e293b;
+    --pizarra: #334155;
+    --blanco: #ffffff;
+}

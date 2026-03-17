@@ -1,0 +1,18 @@
+/* REJILLA 33% */
+.wp-block-post-template {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 25px !important;
+}
+
+/* LA TERMINAL */
+.estilo-terminal {
+    background-color: var(--pizarra) !important;
+    border-top: 25px solid #2d3748 !important;
+    padding: 25px !important;
+}
+
+/* FORZAMOS EL BLANCO (Solo aquí dentro) */
+.estilo-terminal :is(h1, h2, h3, h4, p, a, .wp-block-post-title, .wp-block-post-title a) {
+    color: var(--blanco) !important;
+}

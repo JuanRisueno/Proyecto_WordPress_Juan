@@ -1,0 +1,11 @@
+/* CUADRO AZUL (ZONA PROFESIONAL) */
+.has-background {
+    background-color: var(--pizarra) !important;
+}
+
+/* AQUÍ SÍ FORZAMOS EL BLANCO */
+html body .has-background,
+html body .has-background * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}

@@ -1,22 +1,44 @@
-# Ignorar el núcleo de WordPress (ya lo trae Docker)
+# 1. NÚCLEO DE WORDPRESS (CORE)
+# Ignoramos solo los archivos PHP de la raíz para no afectar a los temas
+/*.php
+!/index.php
+!/wp-config-sample.php
+!/wp-config.php
+
+# Ignorar carpetas del sistema de WordPress
 wp-admin/
 wp-includes/
-*.php
-!index.php
-!wp-config.php
 
-# Ignorar contenido estándar que no sea tuyo
-wp-content/plugins/
-wp-content/themes/twentytwenty*
+# 2. CONTENIDO (WP-CONTENT)
 wp-content/languages/
 wp-content/upgrade/
+wp-content/plugins/
 
-# Ignorar las imágenes (ocupan demasiado espacio en Git)
-wp-content/uploads/
+# 3. TEMAS (EL FILTRO CLAVE)
+# Ignoramos todos los temas (incluyendo Blocksy padre)
+wp-content/themes/*
 
-# PERMITIR tu trabajo (el Child Theme que vamos a crear)
+# PERMITIMOS exclusivamente tu trabajo: el Child Theme
 !wp-content/themes/blocksy-child/
 
-# Ignorar archivos del sistema y logs
+# 4. MULTIMEDIA Y BACKUPS (PESADOS)
+# Ignoramos las imágenes y los backups de All-in-One para que el repo sea ligero
+wp-content/uploads/
+wp-content/ai1wm-backups/
+
+# 5. CONFIGURACIÓN DE SISTEMA E INFRAESTRUCTURA
+!docker-compose.yml
+!Dockerfile
+!.gitignore
+!README.md
+!*.pdf
+
+# 6. BASURA DEL SISTEMA Y LOGS
 *.log
 .DS_Store
+.thumbs
+.db
+.cache/
+__pycache__/
+.vscode/
+.idea/
